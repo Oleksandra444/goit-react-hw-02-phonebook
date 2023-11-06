@@ -1,3 +1,4 @@
+import { ContactFilterWrapper, ContactFilterButton, ContactFilterInput } from "./ContactFilter.styled";
 
 export const ContactFilter = ({
   name,
@@ -5,15 +6,15 @@ export const ContactFilter = ({
   onResetFilter,
 }) => {
   return (
-    <div>
-      <input
+    <ContactFilterWrapper>
+      <ContactFilterInput
         type="text"
         value={name}
         onChange={evt => onUpdateList(evt.target.value)}
-        placeholder="Search"
+        placeholder="SEARCH"
       />
       
-      <button type = "button" onClick={onResetFilter}>Reset search</button>
-    </div>
+      <ContactFilterButton type = "button" onClick={onResetFilter}>Reset search</ContactFilterButton>
+    </ContactFilterWrapper>
   );
 };

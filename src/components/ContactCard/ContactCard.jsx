@@ -1,10 +1,15 @@
-
+import { FcPhoneAndroid } from 'react-icons/fc';
+import { ContactCardWrappper, ContactCardValue, ContactCardDelButton,ContactValuedWrappper } from './ContactCard.styled';
 
 export const ContactCard = ({ name, number, onDelete, id }) => { return(
     <>
-        <div>
-            <p>{name} :{ number}</p>
-        </div>
-        <button onClick={()=>onDelete(id) }>Delete</button>
+        <ContactCardWrappper>
+            <ContactValuedWrappper>
+            <FcPhoneAndroid/>
+                <ContactCardValue>{name} : {number}</ContactCardValue>
+                </ContactValuedWrappper>
+            <ContactCardDelButton onClick={()=>onDelete(id) }>Delete</ContactCardDelButton>
+        </ContactCardWrappper>
+        
     </>)
 }
