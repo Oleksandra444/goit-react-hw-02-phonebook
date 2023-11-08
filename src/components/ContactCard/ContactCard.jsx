@@ -1,7 +1,8 @@
 import { FcPhoneAndroid } from 'react-icons/fc';
 import { ContactCardWrappper, ContactCardValue, ContactCardDelButton,ContactValuedWrappper } from './ContactCard.styled';
 
-export const ContactCard = ({ name, number, onDelete, id }) => { return(
+export const ContactCard = ({ name, number, onDelete, id }) => {
+    return (
     <>
         <ContactCardWrappper>
             <ContactValuedWrappper>

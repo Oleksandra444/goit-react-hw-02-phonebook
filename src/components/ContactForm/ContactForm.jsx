@@ -13,7 +13,8 @@ const contactScheme = Yup.object().shape({
 });
 
 export const ContactForm = ({ onAdd}) => { 
- return (<div>
+  return (
+    <div>
     
     <Formik
       initialValues={{
@@ -43,7 +44,8 @@ export const ContactForm = ({ onAdd}) => {
         <ContactAddButton type="submit">Add Contact</ContactAddButton>
       </Form>
     </Formik>
-  </div>)
+    </div>
+  )
 
 
 }
