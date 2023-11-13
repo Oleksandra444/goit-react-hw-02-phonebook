@@ -15,7 +15,7 @@ export const Form = styled(FormikForm)`
 export const Field = styled(FormikField)`
   
   font: inherit;
-  border: 4px solid #E7E9FC;
+  border: 4px solid #4682B4;
 border-radius: 0.35em;
 width:200px;
 padding: 4px 10px;
@@ -46,12 +46,14 @@ padding: 5px 5px;
 font-size: 14px;
 width: 150px;
 text-transform: uppercase;
-background-color: white;
-border: 4px solid #E7E9FC;
+background-color: #4682B4;
+border: 4px solid #4682B4;
 border-radius: 0.35em;
+color: white;
 
 &:hover {
   border: 4px solid #404BBF;
   border-radius: 0.35em;
-  color: #404BBF; 
+  color: #404BBF;
+  background-color: white; 
   }`

@@ -6,15 +6,37 @@ import { ContactList } from "./ContactList/ContactList";
 import { ContactFilter } from "./ContactFilter/ContactFilter";
 import { SectionTitle, Layout } from "./App.styled";
 
+const storageKey = 'contact-list'
+
 export class App extends Component {
   state = {
     contacts: [],
     filter: '',
     
   }
+
+  componentDidMount() {
+    const savedContacts = window.localStorage.getItem(storageKey);
+    if (savedContacts !== null) { 
+      this.setState({
+        contacts: JSON.parse(savedContacts),
+      });
+    }
+
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      window.localStorage.setItem(storageKey, JSON.stringify(this.state.contacts))
+     }
+  }
+
   addCard =
     newContact => {
-      if (this.state.contacts.some(contact => contact.name === newContact.name)) { alert(`Name ${newContact.name} is already exist in your Contacts`) } else{
+      if (this.state.contacts.some(contact => contact.name === newContact.name)) {
+        alert(`Name ${newContact.name} is already exist in your Contacts`)
+      }
+      else {
         const contact = {
           ...newContact,
           id: nanoid(),

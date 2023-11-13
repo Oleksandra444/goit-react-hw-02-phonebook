@@ -8,8 +8,8 @@ const contactScheme = Yup.object().shape({
     .max(30, 'Too Long!')
     .required('Please enter the name'),
   number: Yup.string()
-    .matches(/^\d{2}-\d{3}-\d{3}$/, 'Invalid format')
-    .required('Please enter the number'),
+    .matches(/^\d{3}-\d{3}-\d{2}$/, 'Invalid format, requared XXX-XXX-XX')
+    .required('Please enter the number, format XXX-XXX-XX'),
 });
 
 export const ContactForm = ({ onAdd}) => { 
@@ -38,7 +38,7 @@ export const ContactForm = ({ onAdd}) => {
         </FormGroup>
 
         <FormGroup htmlFor="number">Number
-         <Field id="number" name="number" placeholder="XX-XXX-XXX" />
+         <Field id="number" name="number" placeholder="XXX-XXX-XX" />
          <ErrorMessage name="number" component="div"/>
 </FormGroup>
         <ContactAddButton type="submit">Add Contact</ContactAddButton>
